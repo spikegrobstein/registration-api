@@ -51,6 +51,20 @@ app.get('/nodes', function( req, res ) {
   res.send(JSON.stringify(nodes));
 });
 
+app.delete('/nodes/:address', function( req, res ) {
+  var address = req.params.address,
+      n;
+
+  for ( n in nodes ) {
+    if ( n == address ) {
+      delete nodes[n];
+      break;
+    }
+  }
+
+  res.send('ok');
+});
+
 var server = app.listen( 3000, function() {
   var host = server.address().address
   var port = server.address().port
