@@ -22,7 +22,7 @@ It's goal is to solve a simple problem for small deployments (less than
 ## Running the service
 
     npm install
-    node index.js
+    node server.js
 
 The service runs on port 3000 and listens on `0.0.0.0`. This is currently
 hard-coded.
